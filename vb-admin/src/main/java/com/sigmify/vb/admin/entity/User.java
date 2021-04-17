@@ -51,10 +51,17 @@ public class User implements Serializable{
 	  @JoinColumn(name = "user_type",referencedColumnName = "id")
 	  private UserType usertype;
 	  
+<<<<<<< HEAD
 	  @Column(name="create_date")
 	  private Date createDate;
 	  
 	  @Column(name="last_update_date")
+=======
+	  @Column(name="create_date",nullable = true)
+	  private Date createDate;
+	  
+	  @Column(name="last_update_date",nullable = true)
+>>>>>>> branch 'master' of https://github.com/AsuGit/vb.git
 	  private Date lastUpdateDate;
 	  
 	  @Column(name="is_active")
