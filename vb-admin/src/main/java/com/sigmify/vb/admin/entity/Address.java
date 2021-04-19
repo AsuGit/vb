@@ -196,7 +196,7 @@ public class Address implements Serializable {
 				+ ", creationDate=" + creationDate + ", lastUpdateDate=" + lastUpdateDate + ", lastUpdateBy="
 				+ lastUpdateBy + "]";
 	}
-    
+
 }    
 	
 

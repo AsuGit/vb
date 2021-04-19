@@ -2,7 +2,7 @@ package com.sigmify.vb.admin.entity;
 
 import java.io.File;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.sigmify.vb.admin.entity.metadata.UserType;
 
@@ -47,21 +49,16 @@ public class User implements Serializable{
 	  @Column(name="profile_photo",length = 200)
 	  private File photo;
 	  
-	 @ManyToOne(targetEntity =UserType.class,cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
+	  @ManyToOne(targetEntity =UserType.class,cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
 	  @JoinColumn(name = "user_type",referencedColumnName = "id")
 	  private UserType usertype;
-	  
-<<<<<<< HEAD
-	  @Column(name="create_date")
+	 
+	  @Temporal(TemporalType.TIMESTAMP)
+	  @Column(name="create_date",nullable = false)
 	  private Date createDate;
 	  
-	  @Column(name="last_update_date")
-=======
-	  @Column(name="create_date",nullable = true)
-	  private Date createDate;
-	  
-	  @Column(name="last_update_date",nullable = true)
->>>>>>> branch 'master' of https://github.com/AsuGit/vb.git
+	  @Temporal(TemporalType.TIMESTAMP)
+	  @Column(name="last_update_date",nullable = false)
 	  private Date lastUpdateDate;
 	  
 	  @Column(name="is_active")

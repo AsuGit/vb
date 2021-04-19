@@ -3,7 +3,7 @@ package com.sigmify.vb.admin.dto;
 import java.io.File;
 import java.io.Serializable;
 import java.sql.Date;
-
+import java.util.List;
 
 import com.sigmify.vb.admin.entity.metadata.UserType;
 
@@ -17,15 +17,15 @@ public class UserDTO implements Serializable {
 	  private String userName;
 	  private String fName;
 	  private String lName;
-	  private File photo;
+	  private String photo;
 	  private UserType usertype;
+	  private List<AddressDTO> addressdto;
 	  private Date createDate;
 	  private Date lastUpdateDate;
 	  private boolean active;
 	  private Long lastUpdateBy;
-	  
-	//-----getter&setter method
-	  
+	
+//------------getter&setter method-----
 	public Long getId() {
 		return id;
 	}
@@ -50,17 +50,23 @@ public class UserDTO implements Serializable {
 	public void setlName(String lName) {
 		this.lName = lName;
 	}
-	public File getPhoto() {
+	public String getPhoto() {
 		return photo;
 	}
-	public void setPhoto(File photo) {
+	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	public UserType getUserType() {
+	public UserType getUsertype() {
 		return usertype;
 	}
-	public void setUserType(UserType userType) {
-		this.usertype = userType;
+	public void setUsertype(UserType usertype) {
+		this.usertype = usertype;
+	}
+	public List<AddressDTO> getAddressdto() {
+		return addressdto;
+	}
+	public void setAddressdto(List<AddressDTO> addressdto) {
+		this.addressdto = addressdto;
 	}
 	public Date getCreateDate() {
 		return createDate;

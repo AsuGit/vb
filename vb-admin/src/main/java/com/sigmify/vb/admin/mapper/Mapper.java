@@ -16,8 +16,9 @@ public interface Mapper<E, DTO> extends Converter<E, DTO>{
   *
   * @param dto the dto
   * @return the e
+ * @throws Exception 
   */
- E	toEntity(DTO dto);
+ E	toEntity(DTO dto) throws Exception;
 	
  
  
